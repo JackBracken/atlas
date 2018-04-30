@@ -1,0 +1,13 @@
+h1 Athlete Overview
+
+= link_to 'log in to strava', strava_login_path
+
+p = @athlete.inspect
+
+ul
+  - @routes.each do |route|
+    li
+      div = route['name']
+      div = route['distance']
+      div = route['elevation_gain']
+      div = route['estimated_completion_time']

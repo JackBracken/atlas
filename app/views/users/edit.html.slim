@@ -1,0 +1,10 @@
+h1 Edit profile
+
+= form_for current_user, url: user_path, method: :put do |f|
+  - if current_user.errors.any?
+    h2 errors occured
+    = current_user.errors.count
+
+  = f.text_field :name, autofocus: true
+  = f.email_field :email
+  = f.submit
