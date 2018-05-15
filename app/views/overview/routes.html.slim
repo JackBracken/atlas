@@ -1,0 +1,7 @@
+.row
+  .col
+    h3 All routes!
+
+.row
+  - @routes.each_with_index do |r, i|
+    h3 = "#{i}: #{r.inspect}"

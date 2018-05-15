@@ -1,0 +1,15 @@
+.folder-list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.folder {
+    margin-bottom: 12px;
+
+    .card .card-body {
+        vertical-align: middle;
+    }
+}
+

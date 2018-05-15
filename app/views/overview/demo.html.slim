@@ -1,0 +1,15 @@
+.row
+  .col
+    h3 FOLDERS (TODO: breadcrumbs menu)
+= image_url 'wicklow.jpg'
+.row
+  - @routes.each do |r|
+    .col.s12.m4
+      .card
+        .card-image
+          img src='#{r[:img]}'
+          span.card-title #{r[:title]}
+        .card-content
+          ul
+            li #{r[:routes]} routes
+            li #{r[:total_km]}km

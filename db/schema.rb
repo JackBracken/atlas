@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180427132220) do
+ActiveRecord::Schema.define(version: 20180510135703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,29 @@ ActiveRecord::Schema.define(version: 20180427132220) do
     t.index ["user_id"], name: "index_identities_on_user_id"
   end
 
+  create_table "maps", force: :cascade do |t|
+    t.string "summary_polyline"
+    t.string "polyline"
+    t.string "strava_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "routes_id"
+    t.index ["routes_id"], name: "index_maps_on_routes_id"
+    t.index ["strava_id"], name: "index_maps_on_strava_id"
+  end
+
+  create_table "routes", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.float "distance"
+    t.float "elevation_gain"
+    t.integer "sub_type"
+    t.integer "strava_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["strava_id"], name: "index_routes_on_strava_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
@@ -40,4 +63,5 @@ ActiveRecord::Schema.define(version: 20180427132220) do
   end
 
   add_foreign_key "identities", "users"
+  add_foreign_key "maps", "routes", column: "routes_id"
 end

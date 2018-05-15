@@ -18,6 +18,12 @@ gem 'rb-readline'
 gem 'slim-rails'
 gem 'strava-api-v3'
 gem 'omniauth-strava'
+# gem 'bootstrap', '~> 4.1.1'
+gem 'materialize-sass', '~> 1.0.0.beta'
+gem 'material_icons'
+
+# Job queues
+gem 'sidekiq'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

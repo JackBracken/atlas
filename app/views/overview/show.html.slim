@@ -7,7 +7,7 @@ p = @athlete.inspect
 ul
   - @routes.each do |route|
     li
+      div = route['id']
       div = route['name']
       div = route['distance']
       div = route['elevation_gain']
-      div = route['estimated_completion_time']
